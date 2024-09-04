@@ -1,0 +1,21 @@
+{
+  "name": "ghcss-extension",
+  "description": "A simple extension that allows users to view custom css on GitHub profiles.",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Bims-sh",
+    "email": "contact@bims.sh",
+    "url": "https://bims.sh"
+  },
+  "devDependencies": {
+    "typescript": "5.3.3",
+    "extension": "latest"
+  },
+  "scripts": {
+    "dev": "extension dev",
+    "start": "extension start",
+    "build": "extension build"
+  },
+  "dependencies": {}
+}
