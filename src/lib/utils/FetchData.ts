@@ -30,13 +30,22 @@ export async function tryFetchFromAllCommonBranches(basePath: string, pageType: 
     const cssFile = cssFileNames[pageType];
 
     for (const branch of commonBranches) {
-        const url = `${basePath}/${owner}/${repo || owner}/${branch}/${cssFile}`;
+        let url: string;
+
+        if (pageType === GitHubPageType.Organization) {
+            // For organizations, the path for the repo is always '.github'
+            url = `${basePath}/${owner}/.github/${branch}/${cssFile}`;
+        } else {
+            // For other types, use the normal repo structure
+            url = `${basePath}/${owner}/${repo || owner}/${branch}/${cssFile}`;
+        }
+
         try {
             const response = await fetch(url, { method: 'HEAD' });
             if (response.ok) {
                 return url;
             } else if (response.status === 404) {
-                console.log(`Could not find custom css for ${owner} on branch ${branch}`);
+                console.log(`Could not find custom CSS for ${owner} on branch ${branch}`);
             }
         } catch (error) {
             console.log(`Failed to fetch CSS file at ${url}: ${error}`);
