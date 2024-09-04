@@ -17,8 +17,8 @@
     "dev:ff": "extension dev -b firefox",
     "start:chrome": "extension start -b chrome",
     "start:ff": "extension start -b firefox",
-    "build:all": "extension build -b chrome && extension build -b firefox",
-    "build:chrome": "extension build -b firefox",
+    "build:all": "extension build -b all",
+    "build:chrome": "extension build -b chrome",
     "build:ff": "extension build -b firefox"
   },
   "dependencies": {}
