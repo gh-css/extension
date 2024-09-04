@@ -1,11 +1,10 @@
 {
   "manifest_version": 3,
-  "version": "1.0",
+  "version": "1.1",
   "name": "ghcss-extension",
   "description": "A simple extension that allows users to view custom css on GitHub profiles.",
   "author": "Bims-sh",
   "permissions": [
-    "webNavigation",
     "tabs",
     "activeTab"
   ],
