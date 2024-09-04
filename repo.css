@@ -1,0 +1,9 @@
+﻿.AppHeader-logo svg {
+    display: none;
+}
+
+.AppHeader-logo {
+    background-image: url('https://avatars.githubusercontent.com/u/172333732?s=48&v=4');
+    background-size: cover;
+    background-position: center;
+}
