@@ -1,5 +1,5 @@
 ﻿import {GitHubPageType} from "../types/GitHubPageType";
-import {fetchMainBranch, fetchPlainCss} from "./FetchData";
+import {fetchPlainCss, tryFetchFromAllCommonBranches} from "./FetchData";
 
 export async function fetchGitHubCss(): Promise<string | null> {
     let css: string | null = null;
@@ -25,7 +25,7 @@ export async function fetchGitHubCss(): Promise<string | null> {
     return css;
 }
 
-function getGitHubPageType(): { type: GitHubPageType | null, id: string | null } {
+export function getGitHubPageType(): { type: GitHubPageType | null, id: string | null } {
     const metaOrganization = document.querySelector('meta[content^="organization:"]')?.getAttribute("content")?.split(":").pop() || null;
     const metaRepository = document.querySelector('meta[content^="repository:"]')?.getAttribute("content")?.split(":").pop() || null;
     const metaUser = document.querySelector('meta[name="octolytics-dimension-user_id"]')?.getAttribute("content") || null;
@@ -44,8 +44,10 @@ async function getGitHubCssPath(pageType: GitHubPageType): Promise<string | null
     const repo = pathSegments[1] || "";
 
     try {
-        let cssPath: string | null = null;
-        const mainBranch = await fetchMainBranch(owner, pageType === GitHubPageType.Organization ? ".github" : repo || owner);
+        let cssPath: string | null;
+        
+        // fetching the main branch without auth causes ip wide rate limits pretty quickly, we probably need to cache this or store the css on our end
+        /*const mainBranch = await fetchMainBranch(owner, pageType === GitHubPageType.Organization ? ".github" : repo || owner);
 
         if (!mainBranch) {
             return null;
@@ -61,7 +63,10 @@ async function getGitHubCssPath(pageType: GitHubPageType): Promise<string | null
             case GitHubPageType.User:
                 cssPath = `${basePath}/${owner}/${owner}/${mainBranch}/user.css`;
                 break;
-        }
+        }*/
+        
+        // temporary "fix"
+        cssPath = await tryFetchFromAllCommonBranches(basePath, pageType, owner, repo);
 
         return cssPath;
     } catch (error) {

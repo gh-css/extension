@@ -5,9 +5,9 @@
   "description": "A simple extension that allows users to view custom css on GitHub profiles.",
   "author": "Bims-sh",
   "permissions": [
-    "activeTab",
+    "webNavigation",
     "tabs",
-    "storage"
+    "activeTab"
   ],
   "icons": {
     "48": "images/extension_48.png",

@@ -13,9 +13,13 @@
     "extension": "latest"
   },
   "scripts": {
-    "dev": "extension dev",
-    "start": "extension start",
-    "build": "extension build"
+    "dev:chrome": "extension dev -b chrome",
+    "dev:ff": "extension dev -b firefox",
+    "start:chrome": "extension start -b chrome",
+    "start:ff": "extension start -b firefox",
+    "build:all": "extension build -b chrome && extension build -b firefox",
+    "build:chrome": "extension build -b firefox",
+    "build:ff": "extension build -b firefox"
   },
   "dependencies": {}
 }
