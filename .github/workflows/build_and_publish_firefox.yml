@@ -22,7 +22,7 @@ jobs:
         run: npm run build:ff
 
       - name: Fix firefox manifest
-        run: sed -i '' 's/background\/scripts\.js/background\/service_worker\.js/g' dist/firefox/manifest.json
+        run: sed -i 's/background\/scripts\.js/background\/service_worker\.js/g' dist/firefox/manifest.json
 
       - name: Put the extension into a zip file
         run: zip -r release_firefox.zip dist/firefox
