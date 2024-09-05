@@ -28,21 +28,21 @@ A simple extension that allows users to view custom css on GitHub profiles.
 
 # Usage
 ### For User Pages
-Create a `user.css` file inside your user profile repository (e.g. `github.com/someuser/someuser`).
+Create a `user.css` file inside your user profile repository (e.g. **github.com/someuser/someuser**).
 
 ### For Repositories
-Create a `repo.css` file inside your repository. (e.g. `github.com.com/someuser/somerepo`).
+Create a `repo.css` file inside your repository. (e.g. **github.com.com/someuser/somerepo**).
 
 ### For Organizations
-Create a `org.css` file inside the `.github` repository (e.g. `github.com/someorg/.github`).
+Create a `org.css` file inside the `.github` repository (e.g. **github.com/someorg/.github**).
 
 # Building
 1. Install required npm packages with `npm install` after cloning the repository
 2. Building the extension
 
-   Run either `npm run build:all` to build it for all browsers at the same time,
-   `npm run build:chrome` to just build for chromium or
-   `npm run build:ff` to build the extension for firefox.
+   Run either `npm run build:all` to build it for all browsers at the same time,<br/>
+   `npm run build:chrome` to just build for chromium or<br/>
+   `npm run build:ff` to build the extension for firefox.<br/>
 3. The build output is located in `dist/`
 
 > [!NOTE]
