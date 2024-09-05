@@ -1,16 +1,38 @@
-# ghcss-extension
+<div align=center>
+
+<img src="https://raw.githubusercontent.com/gh-css/extension/master/assets/ghcss.png" width="500" height="220" alt="ghcss banner">
+
+<br>
+
+[![Badge Firefox Version]][Firefox Version] 
+[![Badge Chrome Version]][Chrome Version] 
+
+<br>
 
 A simple extension that allows users to view custom css on GitHub profiles.
+<br>
+<br>
+
+---
+
+**[<kbd> <br> Firefox <br> </kbd>][Firefox]** 
+**[<kbd> <br> Chrome <br> </kbd>][Chrome]** 
+
+---
+
+<br>
+
+</div>
 
 # Usage
 ### For User Pages
-Create a `user.css` file inside your user profile repository (e.g. https://github.com/someuser/someuser).
+Create a `user.css` file inside your user profile repository (e.g. `github.com/someuser/someuser`).
 
 ### For Repositories
-Create a `repo.css` file inside your repository.
+Create a `repo.css` file inside your repository. (e.g. `github.com.com/someuser/somerepo`).
 
 ### For Organizations
-Create a `org.css` file inside the `.github` repository (e.g. https://github.com/someorg/.github)
+Create a `org.css` file inside the `.github` repository (e.g. `github.com/someorg/.github`).
 
 # Building
 1. Install required npm packages with `npm install` after cloning the repository
@@ -24,3 +46,14 @@ Create a `org.css` file inside the `.github` repository (e.g. https://github.com
 > If you try to use the firefox build you may need to update the manifest.json because there is an issue with the current build tool.<br/>
 > To do this either change `background/services.js` to `background/service_worker.js` yourself or simply run the following command:<br/>
 > `sed -i 's/background\/scripts\.js/background\/service_worker\.js/g' dist/firefox/manifest.json`
+
+
+<!----------------------------------------------------------------------------->
+
+[Firefox]: https://addons.mozilla.org/en-US/firefox/addon/ghcss-extension
+[Chrome]: https://chromewebstore.google.com/detail/ghcss-extension/aelelmkakekefmdealedjjckjjmdoldl
+[License]: LICENSE
+
+<!----------------------------------{ Badges }--------------------------------->
+[Badge Firefox Version]: https://img.shields.io/amo/v/ghcss-extension
+[Badge Chrome Version]: https://img.shields.io/chrome-web-store/v/:aelelmkakekefmdealedjjckjjmdoldl
