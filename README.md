@@ -41,7 +41,7 @@ Create a `org.css` file inside the `.github` repository (e.g. `github.com/someor
    Run either `npm run build:all` to build it for all browsers at the same time,
    `npm run build:chrome` to just build for chromium or
    `npm run build:ff` to build the extension for firefox.
-4. The build output is located in `dist/`
+3. The build output is located in `dist/`
 
 > [!NOTE]
 > If you try to use the firefox build, you may need to update the manifest.json because there is an issue with the current build tool.<br/>
