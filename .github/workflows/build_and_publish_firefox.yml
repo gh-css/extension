@@ -28,10 +28,9 @@ jobs:
         run: zip -r release_firefox.zip dist/firefox
 
       - name: Upload to Mozilla Addons
-        uses: trmcnvn/firefox-addon@v1
+        uses: browser-actions/release-firefox-addon@latest
         with:
-          #uuid: '{}'
-          api-key: ${{ secrets.FIREFOX_KEY }}
-          api-secret: ${{ secrets.FIREFOX_SECRET }}
-          manifest: dist/firefox/manifest.json
-          xpi: release_firefox.zip
+          addon-id: "ghcss-extension@bims.sh"
+          addon-path: "release_firefox.zip"
+          auth-api-issuer: ${{ secrets.FIREFOX_KEY }}
+          auth-api-secret: ${{ secrets.FIREFOX_SECRET }}
