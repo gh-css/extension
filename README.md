@@ -4,8 +4,8 @@
 
 <br>
 
-[![Badge Firefox Version]][Firefox Version] 
-[![Badge Chrome Version]][Chrome Version] 
+![Badge Firefox Version] 
+![Badge Chrome Version] 
 
 <br>
 
