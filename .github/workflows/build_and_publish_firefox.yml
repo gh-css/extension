@@ -15,6 +15,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Create a source-code zip file
+        run: zip -r source-code.zip ./**
+
       - name: Install dependencies
         run: npm install
 
@@ -32,5 +35,9 @@ jobs:
         with:
           addon-id: "ghcss-extension@bims.sh"
           addon-path: "release_firefox.zip"
+          source-path: "source-code.zip"
+          approval-note: |
+            The instructions are inside the README.md under the "Build" section.
+            Also make sure to check the note right below them.
           auth-api-issuer: ${{ secrets.FIREFOX_KEY }}
           auth-api-secret: ${{ secrets.FIREFOX_SECRET }}
