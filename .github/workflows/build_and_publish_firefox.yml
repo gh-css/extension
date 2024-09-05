@@ -30,8 +30,8 @@ jobs:
       - name: Upload to Mozilla Addons
         uses: trmcnvn/firefox-addon@v1
         with:
-        #uuid: '{}'
-        api-key: ${{ secrets.FIREFOX_KEY }}
-        api-secret: ${{ secrets.FIREFOX_SECRET }}
-        manifest: dist/firefox/manifest.json
-        xpi: release_firefox.zip
+          #uuid: '{}'
+          api-key: ${{ secrets.FIREFOX_KEY }}
+          api-secret: ${{ secrets.FIREFOX_SECRET }}
+          manifest: dist/firefox/manifest.json
+          xpi: release_firefox.zip
