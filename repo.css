@@ -1,8 +1,24 @@
-﻿.AppHeader-logo svg {
+/* example css for changing the GitHub logo to the ghcss logo in a repository */
+
+/* --- logged in --- */
+.AppHeader-logo svg {
     display: none;
 }
 
 .AppHeader-logo {
+    background-image: url('https://avatars.githubusercontent.com/u/172333732?s=48&v=4');
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- not logged in --- */
+svg.octicon-mark-github {
+    display: none;
+}
+
+a[aria-label="Homepage"] {
+    height: 32px;
+    width: 32px;
     background-image: url('https://avatars.githubusercontent.com/u/172333732?s=48&v=4');
     background-size: cover;
     background-position: center;
