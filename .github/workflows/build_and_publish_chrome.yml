@@ -21,14 +21,14 @@ jobs:
         run: npm run build:chrome
 
       - name: Put the extension into a zip file
-        run: zip -r release.zip dist/chrome
+        run: zip -r release_chrome.zip dist/chrome
 
       - name: Upload to Chrome Web Store
         uses: mobilefirstllc/cws-publish@latest
         with:
-          action: 'upload' 
+          action: 'upload'
           client_id: ${{ secrets.CLIENT }}
           client_secret: ${{ secrets.SECRET }}
           refresh_token: ${{ secrets.TOKEN }}
           extension_id: ${{ secrets.EXTENSION_ID }}
-          zip_file: 'release.zip'
+          zip_file: 'release_chrome.zip'

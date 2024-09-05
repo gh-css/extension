@@ -1,0 +1,36 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - '*' 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the extension
+        run: npm run build:ff
+
+      - name: Fix firefox manifest
+        run: sed -i '' 's/background\/scripts\.js/background\/service_worker\.js/g' dist/firefox/manifest.json
+
+      - name: Put the extension into a zip file
+        run: zip -r release_firefox.zip dist/firefox
+
+      - name: Upload to Mozilla Addons
+        uses: trmcnvn/firefox-addon@v1
+        with:
+        #uuid: '{}'
+        api-key: ${{ secrets.FIREFOX_KEY }}
+        api-secret: ${{ secrets.FIREFOX_SECRET }}
+        manifest: dist/firefox/manifest.json
+        xpi: release_firefox.zip
