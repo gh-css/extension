@@ -56,4 +56,4 @@ Create a `org.css` file inside the `.github` repository (e.g. `github.com/someor
 
 <!----------------------------------{ Badges }--------------------------------->
 [Badge Firefox Version]: https://img.shields.io/amo/v/ghcss-extension
-[Badge Chrome Version]: https://img.shields.io/chrome-web-store/v/:aelelmkakekefmdealedjjckjjmdoldl
+[Badge Chrome Version]: https://img.shields.io/chrome-web-store/v/aelelmkakekefmdealedjjckjjmdoldl
