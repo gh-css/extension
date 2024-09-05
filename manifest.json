@@ -15,6 +15,12 @@
     "chromium:service_worker": "src/background.ts",
     "firefox:scripts": ["src/background.ts"]
   },
+  "firefox:browser_specific_settings": {
+    "gecko": {
+      "id": "ghcss-extension@bims.sh",
+      "strict_min_version": "109.0"
+    }
+  },
   "content_scripts": [
     {
       "matches": ["*://*.github.com/*"],
