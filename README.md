@@ -6,6 +6,8 @@
 
 ![Badge Firefox Version] 
 ![Badge Chrome Version] 
+![Badge License] 
+![Badge Issues Open]
 
 <br>
 
@@ -53,8 +55,10 @@ Create a `org.css` file inside the `.github` repository (e.g. `github.com/someor
 
 [Firefox]: https://addons.mozilla.org/en-US/firefox/addon/ghcss-extension
 [Chrome]: https://chromewebstore.google.com/detail/ghcss-extension/aelelmkakekefmdealedjjckjjmdoldl
-[License]: LICENSE
 
 <!----------------------------------{ Badges }--------------------------------->
+
 [Badge Firefox Version]: https://img.shields.io/amo/v/ghcss-extension
 [Badge Chrome Version]: https://img.shields.io/chrome-web-store/v/aelelmkakekefmdealedjjckjjmdoldl
+[Badge License]: https://img.shields.io/github/license/gh-css/extension
+[Badge Issues Open]: https://img.shields.io/github/issues/gh-css/extension
