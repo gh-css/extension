@@ -37,7 +37,7 @@ Create a `repo.css` file inside your repository. (e.g. **github.com.com/someuser
 Create a `org.css` file inside the `.github` repository (e.g. **github.com/someorg/.github**).
 
 # Building
-1. Install required npm packages with `npm install` after cloning the repository
+1. Install required npm packages with `npm install` after cloning the repository.
 2. Building the extension
 
    Run either `npm run build:all` to build it for all browsers at the same time,<br/>
