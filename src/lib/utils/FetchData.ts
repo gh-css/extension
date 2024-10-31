@@ -26,7 +26,6 @@ export async function tryFetchFromAllCommonBranches(basePath: string, pageType: 
         [GitHubPageType.Repo]: "repo.css",
         [GitHubPageType.User]: "user.css"
     };
-
     const cssFile = cssFileNames[pageType];
 
     for (const branch of commonBranches) {
@@ -51,7 +50,6 @@ export async function tryFetchFromAllCommonBranches(basePath: string, pageType: 
             console.log(`Failed to fetch CSS file at ${url}: ${error}`);
         }
     }
-    
     return null;
 }
 
